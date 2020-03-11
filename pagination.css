@@ -1,0 +1,49 @@
+
+#feedbackTable th , #feedbackTable td
+{
+    text-align: center;
+}
+
+#feedbackTable tr:nth-child(even)
+{
+    background-color: #BEF2F5;
+}
+
+.pagination li:hover{
+    cursor: pointer;
+}
+#feedbackTable tbody tr 
+{
+
+	display: none;
+}
+
+#feedbackTable thead th
+{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#feedbackTable tbody td
+{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#attachmentTable th , #attachmentTable td
+{
+    text-align: center;
+}
+
+
+#attachmentTable thead th
+{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#attachmentTable tbody td
+{
+    border: 1px solid black;
+    padding: 5px;
+}
