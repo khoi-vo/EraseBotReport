@@ -15,20 +15,67 @@
         border: 1px solid black;
         padding: 5px;
     }
-    
+    #summaryTableAttachment
+    {
+        border: 1px solid black;
+        padding: 5px;
+    }
+    #summaryTableAttachment td, #summaryTableAttachment th
+    {
+        border: 1px solid black;
+        padding: 5px;
+    }
+    img.beneath 
+    {
+	      float: left;
+	      margin: 10px;
+    }
+    img.beneathr 
+    {
+	      float: right;
+	      margin: 10px;
+    }
+    .hoverRowModified
+    {
+        transition: transform 0.5s;
+    }
+    .hoverRowModified:hover
+    {
+        background-color: #F08080 !important;
+        transform: scale(1.01);
+    }
+    .hoverRowUnmodified
+    {
+        transition: transform 0.5s;
+    }
+    .hoverRowUnmodified:hover
+    {
+        background-color: #00FA9A !important;
+        transform: scale(1.01);
+    }
+    #feedbackTable
+    {
+        border-collapse: separate;
+        border-spacing: 2px;
+    }
+    .trueAttachmentRow
+    {
+      background-color: #F08080 !important;
+    }
 </style>
 
 <head>
 <title>Erase Bot Report</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="pagination.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="AttachmentTable.js"></script>
-<script type="text/javascript" src="Pagination.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<link rel="stylesheet" type="text/css" href="./lib/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./lib/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="./lib/css/pagination.css">
+<script type="text/javascript" src="./lib/js/jquery-3.4.1-min.js"></script>
+<script type="text/javascript" src="./lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./lib/js/loader.js"></script>
+<script type="text/javascript" src="./lib/js/Pagination.js"></script>
+<script type="text/javascript" src="./lib/js/AttachmentTable.js"></script>
 <script type = "text/javascript" id = "scriptChart"></script>
+<script type = "text/javascript" id = "scriptPieChartAttachment"></script>
 
 <!--<script type="text/javascript">
     // Load google charts
@@ -84,6 +131,8 @@
 <body>
 
 <div class="jumbotron text-center">
+    <img src="./lib/image/cheetah_251x51.png" alt="CHEETAH" class="beneath"/>
+    <img src="./lib/image/lufthansa_300.png" alt="CHEETAH" class="beneathr"/>
     <h1><strong>Erase Bot Report</strong></h1>
 </div>
 <div id="feedbackPage">
@@ -100,23 +149,42 @@
 
 <div class = "container">
     <div class = "row" >
-            
-                <div style="margin: auto;" id="piechart"></div>
-            
+      <div class = "column" style="margin: auto;">
+        <div style="margin: auto;" id="piechart"></div>
+      </div>
+      <div class = "column" style="margin: auto;">
+        <div style="margin: auto;" id="piechartAttachment"></div>
+      </div>  
     </div>        
             <div class = "row">
+              <div class = "column" style="margin: auto;">
                 <table id="summaryTable" style="margin: auto; border: 1px solid black;">
-                    <tr>
-                        <th style="text-align: center;">Modified</th>
-                        <th style="text-align: center;">Unmodified</th>
-                        <th style="text-align: center;">Total</th>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center;"></td>
-                        <td style="text-align: center;"></td>
-                        <td style="text-align: center;"></td>
-                    </tr>
+                  <tr bgcolor='#99CCFF'>
+                      <th style="text-align: center;">Modified</th>
+                      <th style="text-align: center;">Unmodified</th>
+                      <th style="text-align: center;">Total</th>
+                  </tr>
+                  <tr>
+                      <td style="text-align: center;"></td>
+                      <td style="text-align: center;"></td>
+                      <td style="text-align: center;"></td>
+                  </tr>
                 </table>
+              </div>
+              <div class = "column" style="margin: auto;">
+                <table id="summaryTableAttachment" style="margin: auto; border: 1px solid black;">
+                  <tr bgcolor='#99CCFF'>
+                      <th style="text-align: center;">Modified</th>
+                      <th style="text-align: center;">Unmodified</th>
+                      <th style="text-align: center;">Total</th>
+                  </tr>
+                  <tr>
+                      <td style="text-align: center;"></td>
+                      <td style="text-align: center;"></td>
+                      <td style="text-align: center;"></td>
+                  </tr>
+                </table>
+              </div>
             </div>
         
     
